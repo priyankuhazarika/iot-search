@@ -2,5 +2,5 @@
 if (! defined('SHODANAPIKEY')) exit;
 
 function home(){
-    load_view('index');
+    load_view('home');
 }
