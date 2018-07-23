@@ -34,5 +34,10 @@ function load_view($view, $data=[]){
 
     if (! file_exists($view_file) ) die('View file "' . $view_file . '" does not exists.');
 
+    // Defining data variables
+    foreach ($data as $key => $value){
+        $$key = $value;
+    }
+
     include($view_file);
 }
