@@ -24,3 +24,15 @@ switch($page){
     default:
         notfound();
 }
+
+/**
+ * Loads the given view with given data.
+ */
+function load_view($view, $data=[]){
+    $views_dir = 'views/';
+    $view_file = $views_dir . $view . '.php';
+
+    if (! file_exists($view_file) ) die('View file "' . $view_file . '" does not exists.');
+
+    include($view_file);
+}
