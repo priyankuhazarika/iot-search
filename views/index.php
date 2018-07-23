@@ -1,5 +1,5 @@
 <?php
-//if (! defined('SHODANAPIKEY')) exit;
+if (! defined('SHODANAPIKEY')) exit;
 ?>
 
 <html>
