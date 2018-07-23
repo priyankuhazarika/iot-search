@@ -1,6 +1,9 @@
 <?php
 require_once 'apikey.php';
 
+// Including helper files
+require_once 'lib/curl.php';
+
 // Requiring route handlers
 require_once 'handlers/home.php';
 require_once 'handlers/search.php';
