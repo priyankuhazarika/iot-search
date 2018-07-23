@@ -10,7 +10,7 @@ if (! defined('SHODANAPIKEY')) exit;
 <body>
     <form action="index.php" class="center">
         <input type="hidden" name="page" value="search">
-        <input type="text" placeholder="e.g. search for ip">
+        <input type="text" placeholder="e.g. search for ip" name="query">
         <button type="submit">Search</button>
     </form>
     
