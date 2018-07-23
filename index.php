@@ -1,9 +1,5 @@
 <?php
-require_once 'Shodan-PHP-REST-API-master/src/Shodan.php';
 require_once 'apikey.php';
-
-// Initializing the Shodan client
-$client = new Shodan(SHODANAPIKEY, true);
 
 // Requiring route handlers
 require_once 'handlers/home.php';
