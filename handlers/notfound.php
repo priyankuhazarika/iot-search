@@ -1,5 +1,5 @@
 <?php
-if (! defined('SHODANAPI')) exit;
+if (! defined('SHODANAPIKEY')) exit;
 
 function notfound(){
 
