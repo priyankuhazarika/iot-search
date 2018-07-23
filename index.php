@@ -41,3 +41,11 @@ function load_view($view, $data=[]){
 
     include($view_file);
 }
+
+/**
+ * Redirects to the given path.
+ */
+function redirect($to='index.php'){
+    header('location:' . $to);
+    exit;
+}
