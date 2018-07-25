@@ -1,16 +1,14 @@
 <?php
 if (! defined('SHODANAPIKEY')) exit;
 
-function search(){
-    // Fetching query
-    $query = isset($_GET['query'])? $_GET['query']: '';
+// Fetching query
+$query = isset($_GET['query'])? $_GET['query']: '';
 
-    // Empty queries aren't allowed
-    if (empty($query)) redirect('index.php');
+// Empty queries aren't allowed
+if (empty($query)) redirect('index.php');
 
-    // Call Shodan API
-    $result = httpget('https://api.shodan.io/shodan/host/search?key='. urlencode(SHODANAPIKEY) .'&query=' . urlencode($query));
+// Call Shodan API
+$result = httpget('https://api.shodan.io/shodan/host/search?key='. urlencode(SHODANAPIKEY) .'&query=' . urlencode($query));
 
-    // Rendering result in view
-    var_dump($result);
-}
+// Rendering result in view
+var_dump($result);

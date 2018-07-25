@@ -4,10 +4,6 @@ require_once 'apikey.php';
 // Including helper files
 require_once 'lib/curl.php';
 
-// Requiring route handlers
-require_once 'handlers/home.php';
-require_once 'handlers/search.php';
-require_once 'handlers/search.php';
 
 // What action is needed to be performed?
 $page = isset($_GET['page'])? strtolower(trim($_GET['page'])): 'home';
@@ -15,13 +11,13 @@ $page = isset($_GET['page'])? strtolower(trim($_GET['page'])): 'home';
 // Routing requests according to $page
 switch($page){
     case 'home':
-        home();
+        require_once 'handlers/home.php';
     break;
     case 'search':
-        search();
+        require_once 'handlers/search.php';
     break;
     default:
-        notfound();
+        require_once 'handlers/notfound.php';
 }
 
 /**
