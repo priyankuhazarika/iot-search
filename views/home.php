@@ -7,6 +7,7 @@ if (! defined('SHODANAPIKEY')) exit;
 <title>Welcome to IoT Search</title>
 <link rel="stylesheet" href="views/style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet"> 
 </head>
 <body>
     <div class="container">
@@ -14,8 +15,9 @@ if (! defined('SHODANAPIKEY')) exit;
             <input type="hidden" name="page" value="search">
             <center>
                 <div class="row searchboxholder">
+                    <h1 class="hhh">BLUNDER</h1>
                     <div class="col col-lg-10 col-md-10 col-sm-10">
-                        <input type="text" placeholder="e.g. search for ip" style="border-color: aqua" class="form-control" name="query">
+                        <input type="text" placeholder="e.g. search for ip" style="border-color: #40B1EE" class="form-control" name="query">
                     </div>
                     
                     <div class="col col-lg-2 col-md-2 col-sm-2">
