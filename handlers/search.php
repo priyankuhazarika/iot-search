@@ -13,4 +13,7 @@ $result = httpget('https://api.shodan.io/shodan/host/search?key='. urlencode(SHO
 // Rendering result in view
 $result = json_decode($result);
 
-load_view('search', $result);
+load_view('search', [
+    'results' => $result,
+    'query' => $query
+]);
