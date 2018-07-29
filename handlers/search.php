@@ -11,4 +11,6 @@ if (empty($query)) redirect('index.php');
 $result = httpget('https://api.shodan.io/shodan/host/search?key='. urlencode(SHODANAPIKEY) .'&query=' . urlencode($query));
 
 // Rendering result in view
-var_dump($result);
+$result = json_decode($result);
+
+load_view('search', $result);
