@@ -8,8 +8,9 @@ if (! defined('SHODANAPIKEY')) exit;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Results for <?=htmlspecialchars($query)?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_s.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 <body>
     <div class="cntainer">
@@ -35,7 +36,7 @@ if (! defined('SHODANAPIKEY')) exit;
                 <?=htmlspecialchars($result->ip_str)?>
             </a>
         </h2>
-        <p>ISP: <?=htmlspecialchars($result->isp)?></p>
+        <p id="isp">ISP: <?=htmlspecialchars($result->isp)?></p>
         <h4>Port: <?=htmlspecialchars($result->port)?></h4>
 
 
@@ -46,6 +47,7 @@ if (! defined('SHODANAPIKEY')) exit;
         <?php endforeach;?>
         <p>Location: <?=htmlspecialchars($result->location->country_name)?></p>
         <p>Added: <?=htmlspecialchars($result->timestamp)?></p>
+
         
         
     </div>
