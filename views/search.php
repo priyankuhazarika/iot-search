@@ -29,28 +29,34 @@ if (! defined('SHODANAPIKEY')) exit;
     <hr>
 
     <?php foreach($results->matches as $result):?>
-
-    <div>
-        <h2>
-            <a href="index.php?page=ip&amp;ip=<?=urlencode($result->ip_str)?>">
-                <?=htmlspecialchars($result->ip_str)?>
-            </a>
-        </h2>
-        <p id="isp">ISP: <?=htmlspecialchars($result->isp)?></p>
-        <h4>Port: <?=htmlspecialchars($result->port)?></h4>
-
-
-        <?php foreach($result->hostnames as $hostnames):?>
-        <div>
-        <p>Hostnames: <?=htmlspecialchars($result->hostnames[0])?></p>
+    <div class="container ">
+        <div class="col col-lg-8 col-md-8 col-sm-8 ip">
+            <h2>
+                <a href="index.php?page=ip&amp;ip=<?=urlencode($result->ip_str)?>">
+                    <?=htmlspecialchars($result->ip_str)?>
+                </a>
+            </h2>
         </div>
-        <?php endforeach;?>
-        <p>Location: <?=htmlspecialchars($result->location->country_name)?></p>
-        <p>Added: <?=htmlspecialchars($result->timestamp)?></p>
+        <div class="col col-lg-4 col-md-4 col-sm-4 search-results-summary">
+            <p id="isp">ISP: <?=htmlspecialchars($result->isp)?></p>
+            <h4>Port: <?=htmlspecialchars($result->port)?></h4>
+
+
+            <?php foreach($result->hostnames as $hostnames):?>
+            <div>
+            <p>Hostnames: <?=htmlspecialchars($result->hostnames[0])?></p>
+            </div>
+            <?php endforeach;?>
+            <p>Location: <?=htmlspecialchars($result->location->country_name)?></p>
+            <p>Added: <?=htmlspecialchars($result->timestamp)?></p>
+        </div>
+    </div>
+    
+        
 
         
         
-    </div>
+    
 
 
 
