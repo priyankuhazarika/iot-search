@@ -31,7 +31,7 @@ if (! defined('SHODANAPIKEY')) exit;
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body bg-light">
                     <h2>
                         <a href="index.php?page=ip&amp;ip=<?=urlencode($result->ip_str)?>">
                         <?=htmlspecialchars($result->ip_str)?>
