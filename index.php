@@ -15,6 +15,8 @@ switch($page){
     break;
     case 'search':
         require_once 'handlers/search.php';
+    case 'ip':
+        require_once 'handlers/ip.php';
     break;
     default:
         require_once 'handlers/notfound.php';
