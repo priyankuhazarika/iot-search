@@ -15,3 +15,7 @@
 #timestamp {
     font-family: 'Merriweather', serif;
 }
+.card {
+    margin: 0 auto;
+    float: none;
+}
