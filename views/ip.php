@@ -43,7 +43,12 @@ if (! defined('SHODANAPIKEY')) exit;
 
                     <div class="span6">
                         <div class="page-header">
-                            <h2>Ports: <?=htmlspecialchars($ports->ports)?></h2>
+                            <h2>Ports:</h2>
+                            <ul>
+                            <?php foreach($ip->ports as $port):?>
+                                <li><?=htmlspecialchars($port)?></li>
+                            <?php endforeach;?>
+                            </ul>
                         </div>
                     </div>
                 </div>
