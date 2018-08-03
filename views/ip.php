@@ -7,6 +7,7 @@ if (! defined('SHODANAPIKEY')) exit;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="views/style_ip.css">
     <title>IP: <?=htmlspecialchars($ip->ip)?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -29,7 +30,20 @@ if (! defined('SHODANAPIKEY')) exit;
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="page-header">
-                            <h1><?=htmlspecialchars($ip->ip)?></h1>
+                            <h1><?=htmlspecialchars($ip->ip_str)?></h1>
+                            <p><?=htmlspecialchars($ip->os)?></p>
+                            <p><?=htmlspecialchars($ip->region_code)?></p>
+                            <p><?=htmlspecialchars($ip->longitude)?></p>
+                            <h3><?=htmlspecialchars($ip->isp)?></h3>
+                            <h3><?=htmlspecialchars($ip->last_update)?></h3>
+                            <h2><?=htmlspecialchars($ip->asn)?></h2>
+
+                        </div>
+                    </div>
+
+                    <div class="span6">
+                        <div class="page-header">
+                            <h2>Ports: <?=htmlspecialchars($ports->ports)?></h2>
                         </div>
                     </div>
                 </div>
