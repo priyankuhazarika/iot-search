@@ -14,15 +14,9 @@ if (! defined('SHODANAPIKEY')) exit;
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form action="" class="form-inline my-2 m-lg-0">
-                <input type="hidden" name="page" value="search">
-                <input class="form-control mr-sm-2" type="text" name="query" value="<?=htmlspecialchars($query)?>">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+    <?php
+        require_once("views/navbar.php");
+    ?>
        
         
 
@@ -53,6 +47,7 @@ if (! defined('SHODANAPIKEY')) exit;
 
 
     <?php endforeach;?>
+    <?php require_once("views/footer.php"); ?>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
