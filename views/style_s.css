@@ -18,4 +18,9 @@
 .card {
     margin: 0 auto;
     float: none;
+    text-align: center;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }

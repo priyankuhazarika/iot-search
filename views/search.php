@@ -29,7 +29,7 @@ if (! defined('SHODANAPIKEY')) exit;
     <?php foreach($results->matches as $result):?>
 
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
                 <div class="card-body bg-light">
                     <h2>
@@ -39,8 +39,8 @@ if (! defined('SHODANAPIKEY')) exit;
                     </h2>
                     <p id="isp">ISP: <?=htmlspecialchars($result->isp)?></p>
                     <h4 id="port">Port: <?=htmlspecialchars($result->port)?></h4>
-                    <?php foreach($result->hostnames as $hostnames):?>
-                    <p id="hostnames">Hostnames: <?=htmlspecialchars($result->hostnames[0])?></p>
+                    <?php foreach($result->hostnames as $hostname):?>
+                    <p id="hostnames">Hostnames: <?=htmlspecialchars($hostname)?></p>
                     <?php endforeach;?>
                     <p id="location">Location: <?=htmlspecialchars($result->location->country_name)?></p>
                     <p id="timestamp">Added: <?=htmlspecialchars($result->timestamp)?></p>
