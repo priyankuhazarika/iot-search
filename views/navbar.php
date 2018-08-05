@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to IoT Search</title>
     <link rel="stylesheet" href="views/style.css">
     <link rel="stylesheet" href="views/style_s.css">
     <link rel="stylesheet" href="views/style_ip.css">
@@ -16,7 +15,11 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <h1 class="hilo"><a href="index.php" class="hilou">BLUNDER</a></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <form action="" class="form-inline my-2 m-lg-0">
                 <input type="hidden" name="page" value="search">
                 <input class="form-control mr-sm-2" type="text" name="query" value="<?=htmlspecialchars($query)?>">
