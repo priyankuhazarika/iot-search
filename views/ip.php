@@ -7,7 +7,7 @@ if (! defined('SHODANAPIKEY')) exit;
         require_once("views/navbar.php");
     ?>
 
-    <title>IP: <?=htmlspecialchars($ip->ip)?></title>
+    <title>IP: <?=htmlspecialchars($ip->ip_str)?></title>
 
 
     <div class="container">
@@ -57,8 +57,11 @@ if (! defined('SHODANAPIKEY')) exit;
 
             <h1 class="ip_header"><i class="fa fa-reorder"></i>  Services</h1>
             <hr>
+            <?php foreach($ip->data as $data): ?>
 
-
+                <pre><?=htmlspecialchars($data->data)?></pre>
+                
+            <?php endforeach;?>
 
             </div>
         </div>
