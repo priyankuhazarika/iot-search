@@ -57,15 +57,27 @@ if (! defined('SHODANAPIKEY')) exit;
 
             <h1 class="ip_header"><i class="fa fa-reorder"></i>  Services</h1>
             <hr>
+            
             <?php foreach($ip->data as $data): ?>
 
-                <pre><?=htmlspecialchars($data->data)?></pre>
+                <div class="row">
+                    <div class="col col-lg-4 col-md-4 col-sm-4 servicese">
+                        <pre><?=htmlspecialchars($data->transport)?></pre>
+                        <pre><?=htmlspecialchars($data->port)?></pre>
+                        <pre>SSL Certificate: <?=htmlspecialchars($data->ssl->cert->sig_alg)?></pre>
+                    </div>
+                    <div class="col col-lg-8 col-md-8 col-sm-8">
+                        <pre><?=htmlspecialchars($data->data)?></pre>
+                    </div>
+                </div>
                 
+
             <?php endforeach;?>
 
             </div>
         </div>
     </div>
+    
 
     <?php require_once("views/footer.php"); ?>
 
