@@ -67,13 +67,16 @@ if (! defined('SHODANAPIKEY')) exit;
                     </div>
                     <div class="col col-lg-8 col-md-8 col-sm-8">
                         <pre><?=htmlspecialchars($data->data)?></pre>
+
+                        <?php if(isset($data->ssl->cert->sig_alg)):?>
+                        <pre>Signature algorithm: <?=htmlspecialchars($data->ssl->cert->sig_alg)?></pre>
+                        <?php endif;?>
+
                     </div>
                 </div>
-                
+                <hr>
 
             <?php endforeach;?>
-            <h4 class="ssl_header">SSL Certificate: <?=htmlspecialchars($ip->data->version)?></h4>
-
             </div>
         </div>
     </div>
