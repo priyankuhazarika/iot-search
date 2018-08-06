@@ -22,7 +22,7 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <form action="" class="form-inline my-2 m-lg-0">
                 <input type="hidden" name="page" value="search">
-                <input class="form-control mr-sm-2" type="text" name="query" value="<?=htmlspecialchars($query)?>">
+                <input class="form-control mr-sm-2" type="text" name="query">
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
