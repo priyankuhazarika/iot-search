@@ -64,7 +64,6 @@ if (! defined('SHODANAPIKEY')) exit;
                     <div class="col col-lg-4 col-md-4 col-sm-4 servicese">
                         <pre><?=htmlspecialchars($data->transport)?></pre>
                         <pre><?=htmlspecialchars($data->port)?></pre>
-                        <pre>SSL Certificate: <?=htmlspecialchars($data->ssl->cert->sig_alg)?></pre>
                     </div>
                     <div class="col col-lg-8 col-md-8 col-sm-8">
                         <pre><?=htmlspecialchars($data->data)?></pre>
@@ -73,6 +72,7 @@ if (! defined('SHODANAPIKEY')) exit;
                 
 
             <?php endforeach;?>
+            <h4 class="ssl_header">SSL Certificate: <?=htmlspecialchars($ip->data->version)?></h4>
 
             </div>
         </div>
