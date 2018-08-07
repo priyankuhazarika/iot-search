@@ -43,6 +43,12 @@ if (! defined('SHODANAPIKEY')) exit;
                         <td>ASN</td>
                         <th><?=htmlspecialchars($ip->asn)?></th>
                     </tr>
+                    <tr>
+                        <td>Hostnames</td>
+                        <th><?php foreach($ip->hostnames as $hostname):?>
+                        <?=htmlspecialchars($hostname)?>
+                        <?php endforeach;?></th>
+                    </tr>
                 </tbody>
             </table>
             </div>
@@ -69,8 +75,74 @@ if (! defined('SHODANAPIKEY')) exit;
                         <pre><?=htmlspecialchars($data->data)?></pre>
 
                         <?php if(isset($data->ssl->cert->sig_alg)):?>
-                        <pre>Signature algorithm: <?=htmlspecialchars($data->ssl->cert->sig_alg)?></pre>
+                        <pre><h4>SSL:</h4><h5>Certificate info: </h5>Signature Algorithm: <?=htmlspecialchars($data->ssl->cert->sig_alg)?></pre>
                         <?php endif;?>
+                        <?php if(isset($data->ssl->cert->fingerprint->sha256)):?>
+                        <pre><h6>Fingerprint: </h6>sha256: <?=htmlspecialchars($data->ssl->cert->fingerprint->sha256)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->ssl->cert->fingerprint->sha1)):?>
+                        <pre>sha1: <?=htmlspecialchars($data->ssl->cert->fingerprint->sha1)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->ssl->dhparams->public_key)):?>
+                        <pre>Public Key: <?=htmlspecialchars($data->ssl->dhparams->public_key)?></pre>
+                        <?php endif;?>
+                        
+                        <?php if(isset($data->ssl->cert->issuer->emailAddress)):?>
+                        <pre><h6>Issuer: </h6>Issuer Email: <?=htmlspecialchars($data->ssl->cert->issuer->emailAddress)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->ssl->cert->issuer->emailAddress)):?>
+                        <pre>Issuer Organisation: <?=htmlspecialchars($data->ssl->cert->issuer->emailAddress)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->ssl->versions)):?>
+                            <h6>Versions: </h6>
+                            <?php foreach($data->ssl->versions as $version):?>
+                                <pre><?=htmlspecialchars($version)?></pre>
+                            <?php endforeach;?>
+                        <?php endif;?>
+
+                        <?php if(isset($data->ssl->dhparams->fingerprint)):?>
+                        <pre>Fingerprint: <?=htmlspecialchars($data->ssl->dhparams->fingerprint)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->ssl->cipher->version)):?>
+                        <pre><h6>Cipher: </h6>Version: <?=htmlspecialchars($data->ssl->cipher->version)?></pre>
+                        <?php endif;?>
+
+                        <?php if(isset($data->opts->vulns)):?>
+                        <pre><h6>Vulnerabilities: </h6><?htmlspecialchars($data->opts->vulns)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->opts->heartbleed)):?>
+                        <pre><h6>Heartbleed Vulnerability: </h6><?=htmlspecialchars($data->opts->heartbleed)?></pre>
+                        <?php endif;?>
+
+                        <?php if(isset($data->http->title)):?>
+                        <pre><h5>HTTP and HTML related info: </h5>Title: <?=htmlspecialchars($data->http->title)?></pre>
+                        <?php endif;?>
+
+                        <?php if(isset($data->http->host)):?>
+                        <pre>Host: <?=htmlspecialchars($data->http->host)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->http->html)):?>
+                        <pre>Html: <?=htmlspecialchars($data->http->html)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->http->server)):?>
+                        <pre>Server: <?=htmlspecialchars($data->http->server)?></pre>
+                        <?php endif;?>
+
+                        <?php if(isset($data->opts->ssh->fingerprint)):?>
+                        <pre><h4>ssh: </h4>Fingerprint: <?=htmlspecialchars($data->opts->ssh->fingerprint)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->opts->ssh->mac)):?>
+                        <pre>Mac: <?=htmlspecialchars($data->opts->ssh->mac)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->opts->ssh->cipher)):?>
+                        <pre>Cipher: <?=htmlspecialchars($data->opts->ssh->cipher)?></pre>
+                        <?php endif;?>
+                        <?php if(isset($data->opts->ssh->key)):?>
+                        <pre>Key: <?=htmlspecialchars($data->opts->ssh->key)?></pre>
+                        <?php endif;?>
+
+                        
+
 
                     </div>
                 </div>
