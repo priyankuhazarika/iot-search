@@ -141,7 +141,12 @@ if (! defined('SHODANAPIKEY')) exit;
                         <pre>Key: <?=htmlspecialchars($data->opts->ssh->key)?></pre>
                         <?php endif;?>
 
-                        
+                        <?php if(isset($ip->vulns)):?>
+                            <h5>Vulnerabilities: </h5>
+                            <?php foreach($ip->vulns as $vuln):?>
+                                <pre><?=htmlspecialchars($vuln)?></pre>
+                            <?php endforeach;?>
+                        <?php endif;?>
 
 
                     </div>
