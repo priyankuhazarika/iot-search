@@ -11,7 +11,11 @@ if (! defined('SHODANAPIKEY')) exit;
 
 
     <div class="container">
-        
+        <div class="row">
+            <div id="map">
+            <iframe width="100%" height="310px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=86.23168945312501%2C-10.466205555063867%2C98.49243164062501%2C-3.71078200434872&amp;layer=mapnik&amp;marker=<?=htmlspecialchars($ip->latitude)?>, <?=htmlspecialchars($ip->longitude)?>" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=<?=htmlspecialchars($ip->latitude)?>&amp;mlon=<?=htmlspecialchars($ip->longitude)?>#map=7/<?=htmlspecialchars($ip->latitude)?>/<?=htmlspecialchars($ip->longitude)?>">View Larger Map</a><br/><em>Zoom out the map to view the location</em></small>
+            </div>
+        </div>
         <div class="row ikl">
             <div class="col col-lg-6 col-md-6 col-sm-6">
             <h1 class="ip_header"><i class="fa fa-globe"></i>  <?=htmlspecialchars($ip->ip_str)?></h1>
