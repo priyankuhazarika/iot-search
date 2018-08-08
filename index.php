@@ -1,10 +1,11 @@
 <?php
-// API Key
+// SHODAN API Key
 if (file_exists('apikey.php'))
     require_once 'apikey.php';
-else
+else{
     define('SHODANAPIKEY', $_ENV['SHODANAPIKEY']);
-
+    define('GOOGLEAPIKEY', $_ENV['GOOGLEAPIKEY']);
+}
 
 // Including helper files
 require_once 'lib/curl.php';

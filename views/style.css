@@ -56,3 +56,7 @@ html, body {
 .hilou {
     color: black;
 }
+#map {
+    height: 400px;
+    width: 100%;
+}
