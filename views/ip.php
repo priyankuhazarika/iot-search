@@ -11,11 +11,7 @@ if (! defined('SHODANAPIKEY')) exit;
 
 
     <div class="container">
-        <div class="row">
-            <div id="map"></div>
-            
-            
-        </div>
+        
         <div class="row ikl">
             <div class="col col-lg-6 col-md-6 col-sm-6">
             <h1 class="ip_header"><i class="fa fa-globe"></i>  <?=htmlspecialchars($ip->ip_str)?></h1>
@@ -53,6 +49,14 @@ if (! defined('SHODANAPIKEY')) exit;
                         <th><?php foreach($ip->hostnames as $hostname):?>
                         <?=htmlspecialchars($hostname)?>
                         <?php endforeach;?></th>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <th><?=htmlspecialchars($ip->latitude)?></th>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <th><?=htmlspecialchars($ip->longitude)?></th>
                     </tr>
                 </tbody>
             </table>
@@ -164,21 +168,7 @@ if (! defined('SHODANAPIKEY')) exit;
     </div>
     
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?=urlencode(GOOGLEAPIKEY)?>&callback=initMap"></script>
-<script>
-    function initMap() {
-        //The location of the ip
-        var place = {lat: <?=htmlspecialchars($ip->latitude)?>, lng: <?=htmlspecialchars($ip->longitude)?>};
-        //The map, centered at the location
-        var map = new google.maps.Map(
-            document.getElementById("map"), {zoom: 4, center: place}
-        );
-        //The marker positioned at the location
-        var marker = new google.maps.Marker({position: place, map: map});
 
-    }
-
-</script>
 
     <?php require_once("views/footer.php"); ?>
 

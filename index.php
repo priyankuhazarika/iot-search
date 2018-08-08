@@ -4,7 +4,6 @@ if (file_exists('apikey.php'))
     require_once 'apikey.php';
 else{
     define('SHODANAPIKEY', $_ENV['SHODANAPIKEY']);
-    define('GOOGLEAPIKEY', $_ENV['GOOGLEAPIKEY']);
 }
 
 // Including helper files
