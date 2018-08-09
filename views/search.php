@@ -7,7 +7,7 @@ if (! defined('SHODANAPIKEY')) exit;
         require_once("views/navbar.php");
     ?>
        
-        
+    <title>Results for "<?=htmlspecialchars($query)?>" | Blunder</title>
 
     <?php foreach($results->matches as $result):?>
 
